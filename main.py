@@ -128,9 +128,9 @@ if __name__ == "__main__":
             now = get_time()
             
             if report_day(sess, now):
-                print(f'{now} 离校申请提交成功')
+                print('离校申请提交成功')
             else:
-                print(f'{now} 离校申请提交失败')
+                print('离校申请提交失败')
         else:
             print('登录失败')
             failed_users.append(user_abbr)
