@@ -27,7 +27,7 @@ jobs:
           DISABLE_PULL_REMOTE: ${{ secrets.DISABLE_PULL_REMOTE }}
         if: env.DISABLE_PULL_REMOTE == ''
         run: |
-          wget -O remote.zip https://github.com/BlueFisher/SHU-selfreport/archive/refs/heads/master.zip
+          wget -O remote.zip https://github.com/helijiqunQAQ/SHU-selfreport-leaving/archive/refs/heads/master.zip
           unzip remote.zip
 
       - name: Report Without OpenVPN
@@ -39,7 +39,7 @@ jobs:
         run: |
           if [[ $DISABLE_PULL_REMOTE == '' ]]; then
             echo "Report from remote";
-            if python -u SHU-selfreport-master/main.py; then
+            if python -u SHU-selfreport-leaving/main.py; then
               echo "Report from remote success";
             else
               echo "Report from remote failed, try using OpenVPN";
@@ -78,7 +78,7 @@ jobs:
         run: |
           if [[ $DISABLE_PULL_REMOTE == '' ]]; then
             echo "Report from remote";
-            python -u SHU-selfreport-master/main.py;
+            python -u SHU-selfreport-leaving/main.py;
           else
             echo "Report from local";
             python -u main.py;
