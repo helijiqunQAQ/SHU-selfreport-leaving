@@ -46,10 +46,10 @@ def config_ovpn():
 
     routing_config = get_route_config()
 
-    with open('.github/vpn/config.ovpn', 'r') as f:
+    with open('config.ovpn', 'r') as f:
         content = f.read()
         content = content.replace('# ROUTING CONFIG', routing_config)
-        with open('.github/vpn/config.ovpn', 'w') as fa:
+        with open('config.ovpn', 'w') as fa:
             fa.write(content)
 
 
