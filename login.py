@@ -46,7 +46,7 @@ def login(username, password):
         print('登录超时')
         return
 
-    url = f'https://selfreport.shu.edu.cn/DayReport.aspx'
+    url = f'https://selfreport.shu.edu.cn/XiaoYJC202207/XueSLXSQ.aspx'
     for _ in range(RETRY_TIMEOUT):
         try:
             r = sess.get(url)
