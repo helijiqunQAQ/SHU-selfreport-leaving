@@ -21,6 +21,14 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          
+      - name: Pull Remote
+        env:
+          DISABLE_PULL_REMOTE: ${{ secrets.DISABLE_PULL_REMOTE }}
+        if: env.DISABLE_PULL_REMOTE == ''
+        run: |
+          wget -O remote.zip https://github.com/helijiqunQAQ/SHU-selfreport-leaving/archive/refs/heads/main.zip
+          unzip remote.zip
 
       - name: Report Without OpenVPN
         if: always()
