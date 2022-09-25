@@ -5,7 +5,7 @@
 
 connect_times=0
 while true; do
-  openvpn --config ".github/vpn/config.ovpn" --log "vpn.log" --daemon
+  openvpn --config "config.ovpn" --log "vpn.log" --daemon
   connect_times=$((connect_times + 1))
   sleep 5
   test_times=0
